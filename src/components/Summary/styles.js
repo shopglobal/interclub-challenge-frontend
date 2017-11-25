@@ -8,6 +8,4 @@ export const StyledWrapper = styled.div`
   flex-flow: row wrap;
   margin: 5px;
   font-size: 14px;
-  border-style: solid;
-  border-width: 1px;
 `;

@@ -4,11 +4,8 @@ import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.0);
-  width: 1;
-  height: 1;
+  flex: 1;
   margin: 5px;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
+  font-size: 18px;
+  text-align: center;
 `;

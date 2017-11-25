@@ -1,13 +1,19 @@
+/* eslint-disable no-unused-vars */
+
 import React from 'react';
 
 import { StyledTitle, StyledSubTitle } from './styles';
 
-export default ({ text, primary, fontSize = false }) => (
+export default ({
+  text,
+  primary = false,
+}) => (
   primary ?
-    <StyledTitle fontSize={fontSize}>
+    <StyledTitle>
       {text}
-    </StyledTitle> :
-    <StyledSubTitle fontSize={fontSize}>
+    </StyledTitle>
+    :
+    <StyledSubTitle>
       {text}
     </StyledSubTitle>
 );

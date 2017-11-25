@@ -5,6 +5,7 @@ import { StyledPanel } from './styles';
 import Section from '../Section/index';
 import UserDetails from '../UserDetails/index';
 import Transcations from '../Transcations/index';
+import Summary from '../Summary/index';
 
 const mockMember = {
   first_name: 'John',
@@ -64,7 +65,9 @@ export default class Details extends Component {
           <UserDetails member={mockMember}/>
         </Section>
         <Section>
-          <Transcations list={transcationsList} summary={summary} />
+          <Transcations>
+            <Summary data={summary} />
+          </Transcations>
         </Section>
       </StyledPanel>
     );

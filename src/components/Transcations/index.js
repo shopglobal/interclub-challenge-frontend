@@ -2,11 +2,8 @@ import React from 'react';
 
 import { StyledWrapper } from './styles';
 
-import Summary from '../Summary/index';
-
-export default ({ summary }) => (
+export default ({ children }) => (
   <StyledWrapper>
-    <Summary data={summary} />
-    <Summary data={summary} />
+    {children}
   </StyledWrapper>
 );

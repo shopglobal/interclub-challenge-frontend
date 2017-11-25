@@ -2,10 +2,14 @@ import React from 'react';
 
 import { StyledWrapper } from './styles';
 
-import SummaryDetailsText from '../SummaryDetailsText/index';
+import ExpenseTexts from '../SummaryDetailsText/ExpenseTexts';
+import IncomeTexts from '../SummaryDetailsText/IncomeTexts';
+import SummaryChart from '../SummaryChart/index';
 
 export default ({ data }) => (
   <StyledWrapper>
-    <SummaryDetailsText sum={data.totalExpense} amount={data.amountExpense}/>
+    <ExpenseTexts sum={data.totalExpense} amount={data.amountExpense} />
+    <SummaryChart data={data} />
+    <IncomeTexts sum={data.totalIncome} amount={data.amountIncome} />
   </StyledWrapper>
 );
