@@ -11,8 +11,9 @@ const resolveResponse = res => new Promise((resolve) => {
 export default {
   delete: (url) =>
     axios.delete(`${API_ROOT}${url}`).then(resolveResponse),
-  get: (url, params = {}) =>
-    axios.get(`${API_ROOT}${url}`, params).then(resolveResponse),
+  get: (url, params) => {
+    return axios.get(`${API_ROOT}${url}`, { params }).then(resolveResponse);
+  },
   put: (url, body) =>
     (axios).put(`${API_ROOT}${url}`, body).then(resolveResponse),
   post: (url, body) =>

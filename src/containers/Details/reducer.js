@@ -40,16 +40,20 @@ export default function (state = initialState, action) {
   }
 
   if (type === FETCH_DETAILS_FULFILLED) {
+    const summary = payload[0].data;
+    const list = payload[1].data;
+    const member = payload[2].data[0];
+
     return {
       ...state,
       member: {
-        ...payload.member,
+        ...member,
       },
       summary: {
-        ...payload.summary,
+        ...summary,
       },
       list: [
-        ...payload.list,
+        ...list,
       ],
     };
   }

@@ -14,7 +14,7 @@ export default ({ sum, amount }) => (
       {'Total value:'}
     </StyledTopic>
     <StyledValue income left>
-      {`$${sum}`}
+      {`$${sum.toFixed(2)}`}
     </StyledValue>
   </StyledWrapper>
 );

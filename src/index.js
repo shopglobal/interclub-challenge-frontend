@@ -22,7 +22,7 @@ injectGlobal`
     padding: 0;
     width: 100vw;
     height: auto;
-    min-width: 360px;
+    min-width: 320px;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     overflow-y: auto;
