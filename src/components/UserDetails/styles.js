@@ -9,6 +9,4 @@ export const StyledWrapper = styled.div`
   margin: 5px;
   flex-direction: column;
   font-size: 18px;
-  border-style: solid;
-  border-width: 1px;
 `;
