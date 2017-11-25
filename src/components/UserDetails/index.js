@@ -13,7 +13,7 @@ const getSubTitle = ({ member }) => {
 
   if (email) return `${email} | Member number ${number}`;
 
-  return `Member Number ${number}`;
+  return `Member number ${number}`;
 };
 
 export default ({ member }) => (
