@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import MemberList from '../../containers/MembersList';
 
@@ -11,7 +12,9 @@ export default class App extends Component {
         <StyledLogoLink href='https://interclub.io' target='_blank'>
           <img src='/assets/inv_logo_48x48.png' />
         </StyledLogoLink>
-        <MemberList />
+        <Switch>
+          <Route exact path="/" component={MemberList}/>
+        </Switch>
       </StyledWrapper>
     );
   }

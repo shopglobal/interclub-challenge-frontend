@@ -10,6 +10,7 @@ import { fetchMembersList, hideOtherMembers } from './actions';
 import { StyledWrapper } from './styles';
 
 function mapStateToProps (state) {
+  console.log(state)
   return {
     members: state.membersList,
   };
@@ -36,28 +37,25 @@ class MemberList extends Component {
   }
 
   render () {
-    // if (this.props.error) {
-    //   return (
-    //     <StyledWrapper>
-    //       {this.props.error}
-    //     </StyledWrapper>
-    //   );
-    // }
-    //
-    // const mappedMembers =
-    //   this.props.members.list.map(member =>
-    //     <MemberItem
-    //       clickHandler={this.memberClickHandler.bind(this)}
-    //       member={member}
-    //       key={member.id} />);
-    //
-    // return (
-    //   <StyledWrapper>
-    //     {mappedMembers}
-    //   </StyledWrapper>
-    // );
+    if (this.props.error) {
+      return (
+        <StyledWrapper>
+          {this.props.error}
+        </StyledWrapper>
+      );
+    }
+
+    const mappedMembers =
+      this.props.members.list.map(member =>
+        <MemberItem
+          clickHandler={this.memberClickHandler.bind(this)}
+          member={member}
+          key={member.id} />);
+
     return (
-      <Details />
+      <StyledWrapper>
+        {mappedMembers}
+      </StyledWrapper>
     );
   }
 }

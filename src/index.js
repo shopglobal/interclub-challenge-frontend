@@ -5,9 +5,12 @@ import ReactDOM from 'react-dom';
 import { injectGlobal } from 'styled-components';
 
 import { Provider } from 'react-redux';
-import { store } from './store';
+
+import { store, history } from './store';
+import { ConnectedRouter } from 'react-router-redux';
 
 import App from './components/App/index';
+console.log(history)
 
 injectGlobal`
   * {
@@ -29,10 +32,12 @@ injectGlobal`
 `;
 
 ReactDOM.render(
-  (
+
     <Provider store={store}>
-      <App />
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
     </Provider>
-  ),
+  ,
   document.getElementById('root')
 );
