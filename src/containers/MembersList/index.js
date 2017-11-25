@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MemberItem from '../../components/MemberItem/index';
+import Details from '../../components/Details/index';
 import { fetchMembersList, hideOtherMembers } from './actions';
 
 import { StyledWrapper } from './styles';
@@ -35,26 +36,31 @@ class MemberList extends Component {
   }
 
   render () {
-    if (this.props.error) {
-      return (
-        <StyledWrapper>
-          {this.props.error}
-        </StyledWrapper>
-      );
-    }
-
-    const mappedMembers =
-      this.props.members.list.map(member =>
-        <MemberItem
-          clickHandler={this.memberClickHandler.bind(this)}
-          member={member}
-          key={member.id} />);
-
+    // if (this.props.error) {
+    //   return (
+    //     <StyledWrapper>
+    //       {this.props.error}
+    //     </StyledWrapper>
+    //   );
+    // }
+    //
+    // const mappedMembers =
+    //   this.props.members.list.map(member =>
+    //     <MemberItem
+    //       clickHandler={this.memberClickHandler.bind(this)}
+    //       member={member}
+    //       key={member.id} />);
+    //
+    // return (
+    //   <StyledWrapper>
+    //     {mappedMembers}
+    //   </StyledWrapper>
+    // );
     return (
       <StyledWrapper>
-        {mappedMembers}
+      <Details />
       </StyledWrapper>
-    );
+    )
   }
 }
 
