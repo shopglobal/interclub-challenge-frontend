@@ -57,10 +57,8 @@ class MemberList extends Component {
     //   </StyledWrapper>
     // );
     return (
-      <StyledWrapper>
       <Details />
-      </StyledWrapper>
-    )
+    );
   }
 }
 

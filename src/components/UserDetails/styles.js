@@ -9,6 +9,5 @@ export const StyledWrapper = styled.div`
   margin: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
+  font-size: 18px;
 `;

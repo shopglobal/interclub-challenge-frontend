@@ -1,11 +1,24 @@
 import React from 'react';
 
-import { StyledWrapper, StyledTitle, StyledText } from './styles';
+import { StyledWrapper } from './styles';
 
-export const MemberItem = ({ member }) => (
+import SectionTitle from '../SectionTitle/index';
+
+const getFullName = ({ member }) => {
+  return `${member.first_name} ${member.last_name}`;
+};
+
+const getSubTitle = ({ member }) => {
+  const { email, number } = member;
+
+  if (email) return `${email} | Member number ${number}`;
+
+  return `Member Number ${number}`;
+};
+
+export default ({ member }) => (
   <StyledWrapper>
-    <StyledTitle />
-    <StyledText text={`${member.first_name} ${member.last_name}`}/>
-    <StyledText text={member.email}/>
+    <SectionTitle primary text={`${getFullName({ member })}`} />
+    <SectionTitle text={`${getSubTitle({ member })}`} />
   </StyledWrapper>
 );

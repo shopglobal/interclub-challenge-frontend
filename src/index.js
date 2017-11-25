@@ -10,19 +10,20 @@ import { store } from './store';
 import App from './components/App/index';
 
 injectGlobal`
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body,
-    html {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      font-family: 'Roboto', sans-serif;
-      overflow-x: hidden;
-      font-size: 14px;
-    }
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    font-size: 14px;
+  }
 `;
 
 ReactDOM.render(
