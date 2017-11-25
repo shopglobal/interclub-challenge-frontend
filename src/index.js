@@ -19,10 +19,11 @@ injectGlobal`
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     min-width: 360px;
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-size: 14px;
   }
 `;

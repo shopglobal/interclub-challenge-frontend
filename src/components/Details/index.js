@@ -18,7 +18,7 @@ const summary = {
   amountIncome: 1,
   amountExpense: 3,
   totalIncome: 2.49,
-  totalExpense: 130.07999999999998,
+  totalExpense: 130.08,
 };
 
 const transcationsList = [

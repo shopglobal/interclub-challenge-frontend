@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledWrapper } from './styles';
 
-import SectionTitle from '../SectionTitle/index';
+import DetailsText from '../DetailsText/index';
 
 const getFullName = ({ member }) => {
   return `${member.first_name} ${member.last_name}`;
@@ -18,7 +18,7 @@ const getSubTitle = ({ member }) => {
 
 export default ({ member }) => (
   <StyledWrapper>
-    <SectionTitle primary text={`${getFullName({ member })}`} />
-    <SectionTitle text={`${getSubTitle({ member })}`} />
+    <DetailsText primary text={`${getFullName({ member })}`} />
+    <DetailsText text={`${getSubTitle({ member })}`} />
   </StyledWrapper>
 );

@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 export const StyledPanel = styled.div`
   background-color: rgba(255, 255, 255, 0.50);
-  width: 1;
-  height: 1;
+  flex: 1 1 0;
   padding: 20px;
   margin: 25px;
   border-radius: 2px;

@@ -8,8 +8,9 @@ export const StyledWrapper = styled.div`
   height: 1;
   margin: 5px;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   border-style: solid;
   border-width: 1px;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 `;
