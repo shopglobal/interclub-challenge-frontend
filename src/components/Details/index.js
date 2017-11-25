@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { StyledPanel } from './styles';
 
 import UserDetails from '../UserDetails/index';
+import Section from '../Section/index';
 
 const mockMember = {
   first_name: 'John',
@@ -15,7 +16,12 @@ export default class Details extends Component {
   render () {
     return (
       <StyledPanel>
-        <UserDetails member={mockMember}/>
+        <Section>
+          <UserDetails member={mockMember}/>
+        </Section>
+        <Section>
+          <UserDetails member={mockMember}/>
+        </Section>
       </StyledPanel>
     );
   }
