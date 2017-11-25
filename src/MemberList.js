@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -10,34 +12,36 @@ const StyledWrapper = styled.div`
     width: 100%;
     padding: 50px calc((100vw - 860px) / 2);
     justify-content: space-between;
-`
+`;
 
 export default class MemberList extends Component {
-    constructor() {
-        super();
+  constructor () {
+    super();
 
-        this.state = {
-            members: []
-        }
+    this.state = {
+      members: [],
+    };
+  }
+
+  async componentWillMount () {
+    try {
+      const res = await axios.get('http://localhost:4000/api/list-members');
+      const members = res.data;
+      this.setState({ members });
+    } catch (err) {
+      console.error(err);
     }
+  }
 
-    async componentWillMount() {
-        try {
-            const res = await axios.get('http://localhost:4000/api/list-members');
-            const members = res.data;
-            this.setState({members});
-        } catch (err) {
-            console.error(err);
-        }
-    }
+  render () {
+    const mappedMembers =
+      this.state.members.map(member =>
+          <MemberItem member={member} key={member.id} />);
 
-    render() {
-        const mappedMembers =  this.state.members.map(member => <MemberItem member={member} key={member.id} />);
-
-        return (
-            <StyledWrapper>
-                {mappedMembers}
-            </StyledWrapper>
-        )
-    }
+    return (
+      <StyledWrapper>
+        {mappedMembers}
+      </StyledWrapper>
+    );
+  }
 }

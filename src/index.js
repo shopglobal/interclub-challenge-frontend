@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-expressions */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { injectGlobal } from 'styled-components'
+import { injectGlobal } from 'styled-components';
 
 import App from './App';
 
@@ -18,6 +20,6 @@ injectGlobal`
         overflow-x: hidden;
         font-size: 14px;
     }
-`
+`;
 
 ReactDOM.render(<App />, document.getElementById('root'));

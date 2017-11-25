@@ -23,7 +23,7 @@ const StyledWrapper = styled.div`
 
 const StyledName = styled.h2`
     text-align: center;
-`
+`;
 
 const MemberItem = ({ member }) => (
     <StyledWrapper>

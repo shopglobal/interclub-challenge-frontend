@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import MemberList from './MemberList';
@@ -22,14 +22,14 @@ const StyledLogoLink = styled.a`
 `;
 
 export default class App extends Component {
-    render() {
-        return (
+  render () {
+    return (
             <StyledWrapper>
                 <StyledLogoLink href='https://interclub.io' target='_blank'>
                     <img src='/assets/inv_logo_48x48.png' />
                 </StyledLogoLink>
                 <MemberList />
             </StyledWrapper>
-        );
-    }
+    );
+  }
 }
