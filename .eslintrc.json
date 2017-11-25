@@ -6,7 +6,10 @@
   "parser": "babel-eslint",
   "parserOptions": {
     "allowImportExportEverywhere": true,
-    "ecmaVersion": 7
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   },
   "globals": {
     "React": true
@@ -28,6 +31,9 @@
       "always"
     ],
     "object-curly-newline": [
+      0
+    ],
+    "no-confusing-arrow": [
       0
     ],
     "class-methods-use-this": [

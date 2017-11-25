@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
@@ -8,7 +10,7 @@ export const StyledWrapper = styled.div`
   border-radius: 2px;
   box-shadow: 0 2px 3px 5px rgba(0, 0, 0, 0.1);
   transition: 200ms all ease-in-out;
-  display: flex;
+  display: ${props => props.shouldDisplay ? 'flex' : 'none'};
   flex-direction: column;
   justify-content: center;
   align-items: center;

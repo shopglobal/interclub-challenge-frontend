@@ -4,10 +4,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MemberItem from '../../components/MemberItem/index';
-import { fetchMembersList } from './actions';
+import { fetchMembersList, hideOtherMembers } from './actions';
 
 import { StyledWrapper } from './styles';
-
 
 function mapStateToProps (state) {
   return {
@@ -20,13 +19,19 @@ function mapDispatchToProps (dispatch) {
     getMembersList () {
       fetchMembersList(dispatch);
     },
+    hideMembers (member) {
+      hideOtherMembers(dispatch, member.id);
+    },
   };
 }
-
 
 class MemberList extends Component {
   componentWillMount () {
     this.props.getMembersList();
+  }
+
+  memberClickHandler (member) {
+    this.props.hideMembers(member);
   }
 
   render () {
@@ -40,7 +45,10 @@ class MemberList extends Component {
 
     const mappedMembers =
       this.props.members.list.map(member =>
-          <MemberItem member={member} key={member.id} />);
+        <MemberItem
+          clickHandler={this.memberClickHandler.bind(this)}
+          member={member}
+          key={member.id} />);
 
     return (
       <StyledWrapper>
