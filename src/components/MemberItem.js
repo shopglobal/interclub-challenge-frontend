@@ -26,11 +26,11 @@ const StyledName = styled.h2`
 `;
 
 const MemberItem = ({ member }) => (
-    <StyledWrapper>
-        <StyledName>
-            {member.first_name}&nbsp;{member.last_name}
-        </StyledName>
-    </StyledWrapper>
+  <StyledWrapper>
+    <StyledName>
+      {member.first_name}&nbsp;{member.last_name}
+    </StyledName>
+  </StyledWrapper>
 );
 
 
