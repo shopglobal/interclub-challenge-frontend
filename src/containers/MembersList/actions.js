@@ -1,10 +1,10 @@
 import {
   FETCH_MEMBERS,
-} from '../constants/actionTypes';
+} from '../../constants/actionTypes';
 
-import agent from '../agent';
+import agent from '../../agent';
 
-export default function fetchMembersList (dispatch) {
+export function fetchMembersList (dispatch) {
   const request = agent.get('/list-members');
 
   return dispatch({

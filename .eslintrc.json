@@ -3,10 +3,6 @@
     "browser": true,
     "node": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
   "parser": "babel-eslint",
   "parserOptions": {
     "allowImportExportEverywhere": true,

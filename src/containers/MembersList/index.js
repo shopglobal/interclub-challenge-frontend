@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import MemberItem from './MemberItem';
-import fetchMembersList from '../actions/fetchMembersList';
+import MemberItem from '../../components/MemberItem/index';
+import { fetchMembersList } from './actions';
+
+import { StyledWrapper } from './styles';
 
 
 function mapStateToProps (state) {
@@ -22,13 +23,6 @@ function mapDispatchToProps (dispatch) {
   };
 }
 
-const StyledWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 50px calc((100vw - 860px) / 2);
-    justify-content: space-between;
-`;
 
 class MemberList extends Component {
   componentWillMount () {
@@ -47,7 +41,6 @@ class MemberList extends Component {
     const mappedMembers =
       this.props.members.list.map(member =>
           <MemberItem member={member} key={member.id} />);
-
 
     return (
       <StyledWrapper>
