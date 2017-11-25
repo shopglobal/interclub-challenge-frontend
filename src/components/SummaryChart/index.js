@@ -8,6 +8,7 @@ const chartSize = 175;
 
 export default class SummaryChart extends Component {
   getPercent ({ totalExpense, totalIncome }) {
+    if (!totalIncome) return 0;
     const sum = totalExpense + totalIncome;
     return (100 * (totalIncome / sum)).toFixed(2);
   }
