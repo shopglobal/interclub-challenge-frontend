@@ -10,7 +10,6 @@ import { store, history } from './store';
 import { ConnectedRouter } from 'react-router-redux';
 
 import App from './components/App/index';
-console.log(history)
 
 injectGlobal`
   * {
@@ -32,12 +31,11 @@ injectGlobal`
 `;
 
 ReactDOM.render(
-
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
-    </Provider>
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>
   ,
   document.getElementById('root')
 );

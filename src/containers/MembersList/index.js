@@ -4,13 +4,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MemberItem from '../../components/MemberItem/index';
-import Details from '../../components/Details/index';
 import { fetchMembersList, hideOtherMembers } from './actions';
 
 import { StyledWrapper } from './styles';
 
 function mapStateToProps (state) {
-  console.log(state)
   return {
     members: state.membersList,
   };
