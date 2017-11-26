@@ -10,7 +10,7 @@ const getFullName = ({ member }) => {
 
 const getSubTitle = ({ member }) => {
   const { email, number } = member;
-
+  console.log(member)
   if (email) return `${email} | Member number ${number}`;
 
   return `Member number ${number}`;

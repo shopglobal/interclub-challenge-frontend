@@ -5,10 +5,12 @@ import { StyledPanel } from './styles';
 import { fetchAllDetails } from './actions';
 
 import Section from '../../components/Section/index';
+import Title from '../../components/Title/index';
 import UserDetails from '../../components/UserDetails/index';
 import Transcations from '../../components/Transcations/index';
 import Summary from '../../components/Summary/index';
 import TimeSelect from '../../components/TimeSelect/index';
+import TransactionsList from '../../components/TransactionsList/index';
 
 const matchStateToProps = (state) => {
   const { list, summary, member } = state.details;
@@ -48,6 +50,14 @@ class Details extends Component {
     return this.props.fetchDetails(params);
   }
 
+  mapToList (item) {
+    const date = new Date(item.date).toDateString();
+    return {
+      id: item.id,
+      content: `${date} - ${item.type} - $${item.amount}`,
+    };
+  }
+
   render () {
     return (
       <StyledPanel>
@@ -55,11 +65,15 @@ class Details extends Component {
           <UserDetails member={this.props.member}/>
         </Section>
         <Section>
+          <Title />
+        </Section>
+        <Section>
           <TimeSelect fetchDetails={this.getDetailsByDateRange.bind(this)}/>
         </Section>
         <Section>
           <Transcations>
             <Summary data={this.props.summary} />
+            <TransactionsList data={this.props.list} />
           </Transcations>
         </Section>
       </StyledPanel>

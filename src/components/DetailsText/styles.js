@@ -17,7 +17,7 @@ function getColor (props) {
   if (props.expense) return 'color: tomato ;';
   return 'color: white ;';
 }
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled.h2`
   ${props => getColor(props)}
   ${props => setTextAlign(props)}
   ${props => props.fontSize ? setFontSize(props.fontSize) : ''}
