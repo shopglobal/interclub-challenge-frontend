@@ -5,12 +5,12 @@ import {
 import agent from '../../agent';
 
 export function fetchAllDetails (params, dispatch) {
-  const { id } = params;
+  const { id, start, end } = params;
 
   const request = Promise.all([
-    agent.get(`/transaction-summary/${id}`),
-    agent.get('/list-transactions', { id }),
-    agent.get('/list-members', { id }),
+    agent.get(`/transaction-summary/${id}`, { start, end }),
+    agent.get('/list-transactions', { params }),
+    agent.get('/list-members', { params }),
   ]);
 
   return dispatch({
