@@ -43,7 +43,7 @@ export default function (state = initialState, action) {
     const summary = payload[0].data;
     const list = payload[1].data;
     const member = payload[2].data[0];
-
+    console.log(list)
     return {
       ...state,
       member: {
